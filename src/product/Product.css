@@ -1,0 +1,44 @@
+.product{
+    display: grid;
+    place-items: center;
+    align-items: center;
+    margin: 10vh 0vh;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .product__add{
+    margin-right: 60%;
+    margin-bottom: 10px;
+  }
+  .product__update{
+    margin-right:10px !important;
+  }
+  .product__submit{
+      margin-top: 10px !important;
+  }
+  .pagination {
+    display: inline-block;
+    
+  }
+  
+  .pagination a {
+    background-color: cadetblue;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    cursor: pointer;
+  }

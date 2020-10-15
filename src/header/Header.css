@@ -1,0 +1,15 @@
+.header{
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    padding: 0px 320px;
+    cursor: pointer;
+    border-bottom: 4px solid #eeeeee;
+}
+
+.header__info {
+    font-weight: 600;
+    color: blue;
+}

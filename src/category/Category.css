@@ -1,0 +1,31 @@
+.category{
+    display: grid;
+    place-items: center;
+    align-items: center;
+    margin-top: 10vh;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 70%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .category__add{
+    margin-right: 60%;
+    margin-bottom: 10px;
+  }
+  .category__update{
+    margin-right:10px !important;
+  }
+  .category__submit{
+    margin-top: 10px !important;
+}
