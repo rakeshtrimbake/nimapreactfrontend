@@ -42,6 +42,7 @@ function Product(props) {
   const [productPerPage, setProductPerPage] = useState(10);
   const [totalProduct, setTotalProduct] = useState(0);
   const [catName,setCatName] = useState('');
+  
  
 useEffect(() => {
     async function handleClick() {
@@ -139,6 +140,8 @@ useEffect(() => {
     if (product.data.error) return alert(product.data.error.message);
     setName(product.data.productName);
     setCatName(product.data.categoryName)
+    setCategory(product.data.categoryId);
+
     
     setOpen(true);
   };
