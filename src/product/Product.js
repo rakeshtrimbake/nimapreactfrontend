@@ -41,6 +41,7 @@ function Product(props) {
   const [currentPage, setCurrentPage] = useState(1);
   const [productPerPage, setProductPerPage] = useState(10);
   const [totalProduct, setTotalProduct] = useState(0);
+  const [catName,setCatName] = useState('');
  
 useEffect(() => {
     async function handleClick() {
@@ -56,6 +57,7 @@ useEffect(() => {
 
   const handleClose = () => {
     setOpen(false);
+    setCatName('');
   };
 
   useEffect(() => {
@@ -98,6 +100,7 @@ useEffect(() => {
     setId("");
     setOpen(true);
     setName("");
+    setCatName('');
   };
 
   const addProduct = async (e) => {
@@ -135,6 +138,7 @@ useEffect(() => {
     const product = await axios.get(`/product/${id}`);
     if (product.data.error) return alert(product.data.error.message);
     setName(product.data.productName);
+    setCatName(product.data.categoryName)
     
     setOpen(true);
   };
@@ -167,7 +171,7 @@ useEffect(() => {
       </a>
     );
   });
-  console.log(renderPageNumbers);
+ 
   return (
     <div className="product">
       <div className="product__add">
@@ -257,7 +261,7 @@ useEffect(() => {
                 </FormControl>
                 <FormControl required className={classes.formControl}>
                   <InputLabel id="demo-simple-select-required-label">
-                    Category
+                    {catName}
                   </InputLabel>
                   <Select
                     labelId="demo-simple-select-required-label"
@@ -266,6 +270,7 @@ useEffect(() => {
                     onChange={handleChange}
                     className={classes.selectEmpty}
                   >
+                    
                     {categoryList.length > 0 ? (
                       categoryList.map((category) => (
                         <MenuItem  value={category.categoryId}>
@@ -273,9 +278,14 @@ useEffect(() => {
                         </MenuItem>
                       ))
                     ) : (
-                      <MenuItem value="">
-                        <em>First add Category</em>
-                      </MenuItem>
+                    (catName > 0 ? 
+                      (<MenuItem value="">
+                    <em>{catName}</em>
+                  </MenuItem>)
+                  :(<MenuItem value="">
+                  <em>First add Category</em>
+                </MenuItem>)) 
+              
                     )}
                   </Select>
                   <FormHelperText>Required</FormHelperText>
