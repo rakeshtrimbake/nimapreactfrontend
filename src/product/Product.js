@@ -171,7 +171,7 @@ useEffect(() => {
       </a>
     );
   });
- 
+    console.log(catName);
   return (
     <div className="product">
       <div className="product__add">
@@ -270,7 +270,9 @@ useEffect(() => {
                     onChange={handleChange}
                     className={classes.selectEmpty}
                   >
-                    
+                    <MenuItem value="" disabled>
+                    <em>{catName}</em>
+                  </MenuItem>
                     {categoryList.length > 0 ? (
                       categoryList.map((category) => (
                         <MenuItem  value={category.categoryId}>
